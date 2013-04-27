@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My Virtual Card Wallet</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="mail_button">e-mail</string>
+    <string name="title_activity_detail_view">DetailView</string>
+    <string name="call_button">Call</string>
+    <string name="message_button">SMS</string>
+    <string name="map_button">Locate</string>
+    <string name="title_activity_locate">LocateActivity</string>
+    <string name="LinkedIn_Icon">LinkedIn</string>
+    <string name="prompt_username">username</string>
+    <string name="Register_button">Register</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="prompt_name">name</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="register">Register</string>
+    <string name="prompt_user">username</string>
+    <string name="title_activity_make_card">MakeCard</string>
+    <string name="title_activity_options">Options</string>
+    <string name="title_activity_edit_card">Edit_card</string>
+    <string name="add_card_button">Add a Card</string>
+    <string name="title_activity_add_card">AddCardActivity</string>
+    <string name="add_prompt">Enter the username of the person you want to add:</string>
+    <string name="add">Add</string>
+    <string name="telephone">Telephone</string>
+
+</resources>
