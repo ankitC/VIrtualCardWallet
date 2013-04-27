@@ -34,7 +34,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/usercard_01"
+        android:icon="@drawable/kaddressbook"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <meta-data
