@@ -95,7 +95,7 @@ public class Edit_card extends Activity {
 						
 						Intent options=new Intent(getApplicationContext(), Options.class);
 						Bundle b = new Bundle();
-						b.putString("username", localCard.getString("Username").toString());
+						b.putString("Username", localCard.getString("Username").toString());
 						options.putExtras(b);
 						startActivity(options);
 					}
