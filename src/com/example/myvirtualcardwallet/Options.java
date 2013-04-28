@@ -34,6 +34,7 @@ public class Options extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent addCardIntent=new Intent(getApplicationContext(), AddCard.class);
+				addCardIntent.putExtras(bunName);
 				startActivity(addCardIntent);
 			}
 		});

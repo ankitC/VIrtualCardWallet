@@ -22,46 +22,50 @@ public class AddCard extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_card);
-		Parse.initialize(this, "HIWiddAFOEElxePoa7qHp72CHvwtNuqOXf1bXkjf", "aJpMrnM1WfUOpLGGSBUSl4pLPh4vVSdQrgL4VBi3"); 
-		 ParseAnalytics.trackAppOpened(getIntent());
-		
-		final EditText toAddusername=(EditText) findViewById(R.id.user_to_add);
-		
-		Button add=(Button) findViewById(R.id.add_button);
-		
+		Parse.initialize(this, "HIWiddAFOEElxePoa7qHp72CHvwtNuqOXf1bXkjf",
+				"aJpMrnM1WfUOpLGGSBUSl4pLPh4vVSdQrgL4VBi3");
+		ParseAnalytics.trackAppOpened(getIntent());
+
+		final EditText toAddusername = (EditText) findViewById(R.id.user_to_add);
+		final Bundle b=getIntent().getExtras();
+		Button add = (Button) findViewById(R.id.add_button);
+
 		add.setOnClickListener(new OnClickListener() {
-			
-			
+
 			public void onClick(View v) {
-				final String usertoadd=toAddusername.getText().toString();
+				final String usertoadd = toAddusername.getText().toString();
 				ParseQuery query = new ParseQuery("Card");
 				query.whereEqualTo("Username", usertoadd);
-				query.getFirstInBackground(new GetCallback(){
-				
-					public void done(ParseObject found, ParseException arg1) {
-						Card retrivedCard=new Card();
-				
-						ParseObject foundCard=new ParseObject("Card");
-						foundCard=found;
-						retrivedCard.name=foundCard.getString("Name");
-						retrivedCard.address=foundCard.getString("Address");
-						retrivedCard.company=foundCard.getString("Company");
-						retrivedCard.designation=foundCard.getString("Designation");
-						retrivedCard.email=foundCard.getString("Email");
-						retrivedCard.telephone=foundCard.getString("Telephone");
-						retrivedCard.username=foundCard.getString("Username");	
+				query.getFirstInBackground(new GetCallback() {
+
+					public void done(ParseObject foundCard, ParseException arg1) {
+						Card retrivedCard = new Card();
+
 						
-						
-						Toast.makeText(getApplicationContext(),"Card Added", 
-				               Toast.LENGTH_SHORT).show();
-						
-						//addCardToLocalDatabase(retrivedCard);
+						/*retrivedCard.name = foundCard.getString("Name");
+						retrivedCard.address = foundCard.getString("Address");
+						retrivedCard.company = foundCard.getString("Company");
+						retrivedCard.designation = foundCard
+								.getString("Designation");
+						retrivedCard.email = foundCard.getString("Email");
+						retrivedCard.telephone = foundCard
+								.getString("Telephone");
+						retrivedCard.username = foundCard.getString("Username");
+
+						Toast.makeText(getApplicationContext(), "Card Added",
+								Toast.LENGTH_SHORT).show();*/
+
+						ParseObject membership=new ParseObject("Memberships");
+						membership.put("Owner", b.get("Username").toString());
+						membership.put("Contact", usertoadd);
+						Toast.makeText(getApplicationContext(), "Card Added",
+								Toast.LENGTH_SHORT).show();
 					}
 				});
-				
+
 			}
 		});
-	
+
 	}
 
 	@Override
