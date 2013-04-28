@@ -93,11 +93,13 @@ public class Edit_card extends Activity {
 						
 						Toast.makeText(getApplicationContext(),"Update Successfull",Toast.LENGTH_SHORT).show();
 						
-						Intent options=new Intent(getApplicationContext(), Options.class);
+						/*Intent options=new Intent(getApplicationContext(), Options.class);
 						Bundle b = new Bundle();
 						b.putString("Username", localCard.getString("Username").toString());
 						options.putExtras(b);
-						startActivity(options);
+						startActivity(options);*/
+						
+						finish();
 					}
 				});
 
