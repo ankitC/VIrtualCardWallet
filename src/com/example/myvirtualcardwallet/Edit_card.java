@@ -30,7 +30,7 @@ public class Edit_card extends Activity {
 		ParseAnalytics.trackAppOpened(getIntent());
 		
 		Bundle b=this.getIntent().getExtras();
-		String username=b.getString("Username");
+		String username=b.getString("Username").toString();
 		Toast.makeText(getApplicationContext(),username, 
 				          Toast.LENGTH_SHORT).show();
 

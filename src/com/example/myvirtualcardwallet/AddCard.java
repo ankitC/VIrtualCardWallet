@@ -27,7 +27,11 @@ public class AddCard extends Activity {
 		ParseAnalytics.trackAppOpened(getIntent());
 
 		final EditText toAddusername = (EditText) findViewById(R.id.user_to_add);
-		final Bundle b=getIntent().getExtras();
+		final Bundle b=this.getIntent().getExtras();
+		final String username=b.getString("Username");
+		Toast.makeText(getApplicationContext(),username,
+				Toast.LENGTH_SHORT).show();
+		
 		Button add = (Button) findViewById(R.id.add_button);
 
 		add.setOnClickListener(new OnClickListener() {
@@ -36,11 +40,15 @@ public class AddCard extends Activity {
 				final String usertoadd = toAddusername.getText().toString();
 				ParseQuery query = new ParseQuery("Card");
 				query.whereEqualTo("Username", usertoadd);
+				
 				query.getFirstInBackground(new GetCallback() {
 
 					public void done(ParseObject foundCard, ParseException arg1) {
 						Card retrivedCard = new Card();
-
+					//	Toast.makeText(getApplicationContext(),"Before get",
+						//		Toast.LENGTH_SHORT).show();
+				//		Toast.makeText(getApplicationContext(), b.getString("Username"),
+					//			Toast.LENGTH_SHORT).show();
 						
 						/*retrivedCard.name = foundCard.getString("Name");
 						retrivedCard.address = foundCard.getString("Address");
@@ -56,8 +64,9 @@ public class AddCard extends Activity {
 								Toast.LENGTH_SHORT).show();*/
 
 						ParseObject membership=new ParseObject("Memberships");
-						membership.put("Owner", b.get("Username").toString());
+						membership.put("Owner", b.getString("Username"));
 						membership.put("Contact", usertoadd);
+						membership.saveInBackground();
 						Toast.makeText(getApplicationContext(), "Card Added",
 								Toast.LENGTH_SHORT).show();
 					}

@@ -329,7 +329,7 @@ public class LoginActivity extends Activity {
 				
 				//Creating Bundle
 				Bundle b = new Bundle();
-				b.putString("username", mUsername);
+				b.putString("Username", mUsername);
 				b.putString("ip", ip);
 				b.putInt("port", port);
 				
