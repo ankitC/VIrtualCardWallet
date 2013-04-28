@@ -16,11 +16,10 @@ int dimen activity_horizontal_margin 0x7f060000
 int dimen activity_vertical_margin 0x7f060001
 int drawable business_people_01 0x7f020000
 int drawable card 0x7f020001
-int drawable hands_3_hand_holding_a_card_ 0x7f020002
-int drawable ic_launcher 0x7f020003
-int drawable kaddressbook 0x7f020004
-int drawable linkedin 0x7f020005
-int drawable usercard_01 0x7f020006
+int drawable ic_launcher 0x7f020002
+int drawable kaddressbook 0x7f020003
+int drawable linkedin 0x7f020004
+int drawable usercard_01 0x7f020005
 int id LinearLayout1 0x7f040014
 int id ScrollView01 0x7f040029
 int id action_forgot_password 0x7f04003d
