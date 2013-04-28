@@ -21,7 +21,7 @@ public class Options extends Activity {
 		
 		viewallcards.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
-				Intent listCardsIntent=new Intent(getApplicationContext(), ListCardsActivity.class);
+				Intent listCardsIntent=new Intent(getApplicationContext(), DetailView.class);
 				listCardsIntent.putExtras(bunName);
 				startActivity(listCardsIntent);
 			}
