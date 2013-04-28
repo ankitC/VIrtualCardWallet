@@ -47,7 +47,7 @@
                 android:ems="10"
                 android:hint="@string/prompt_name"
                 android:inputType="textPersonName" />
-
+<requestFocus />
             <EditText
                 android:id="@+id/email1"
                 android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                 android:maxLines="1"
                 android:singleLine="true" >
 
-                <requestFocus />
+                
             </EditText>
             <EditText
                 android:id="@+id/username"
