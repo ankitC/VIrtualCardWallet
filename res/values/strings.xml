@@ -27,6 +27,7 @@
     <string name="sign_in_button">Sign In</string>
     <string name="add">Add</string>
     <string name="telephone">Telephone</string>
-    
-  
+    <string name="title_activity_list_cards">ListCardsActivity</string>
+    <string name="Blank">" "</string>
+
 </resources>

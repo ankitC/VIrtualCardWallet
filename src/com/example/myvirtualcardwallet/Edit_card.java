@@ -91,7 +91,7 @@ public class Edit_card extends Activity {
 						
 						updatedCard.saveInBackground();
 						
-						Toast.makeText(getApplicationContext(),"Update Successfull",Toast.LENGTH_SHORT).show();
+						Toast.makeText(getApplicationContext(),"Update Successful.",Toast.LENGTH_SHORT).show();
 						
 						/*Intent options=new Intent(getApplicationContext(), Options.class);
 						Bundle b = new Bundle();
