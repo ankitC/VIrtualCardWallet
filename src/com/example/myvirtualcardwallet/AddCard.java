@@ -44,31 +44,18 @@ public class AddCard extends Activity {
 				query.getFirstInBackground(new GetCallback() {
 
 					public void done(ParseObject foundCard, ParseException arg1) {
-						Card retrivedCard = new Card();
-					//	Toast.makeText(getApplicationContext(),"Before get",
-						//		Toast.LENGTH_SHORT).show();
-				//		Toast.makeText(getApplicationContext(), b.getString("Username"),
-					//			Toast.LENGTH_SHORT).show();
-						
-						/*retrivedCard.name = foundCard.getString("Name");
-						retrivedCard.address = foundCard.getString("Address");
-						retrivedCard.company = foundCard.getString("Company");
-						retrivedCard.designation = foundCard
-								.getString("Designation");
-						retrivedCard.email = foundCard.getString("Email");
-						retrivedCard.telephone = foundCard
-								.getString("Telephone");
-						retrivedCard.username = foundCard.getString("Username");
-
-						Toast.makeText(getApplicationContext(), "Card Added",
-								Toast.LENGTH_SHORT).show();*/
-
+						if(foundCard.isDataAvailable()){
 						ParseObject membership=new ParseObject("Memberships");
 						membership.put("Owner", b.getString("Username"));
 						membership.put("Contact", usertoadd);
 						membership.saveInBackground();
 						Toast.makeText(getApplicationContext(), "Card Added",
 								Toast.LENGTH_SHORT).show();
+						}
+						else{
+							Toast.makeText(getApplicationContext(),"Username enterned does not exist.",
+									Toast.LENGTH_SHORT).show();
+						}
 					}
 				});
 
