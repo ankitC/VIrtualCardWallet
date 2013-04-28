@@ -27,11 +27,11 @@ public class AddCard extends Activity {
 		ParseAnalytics.trackAppOpened(getIntent());
 
 		final EditText toAddusername = (EditText) findViewById(R.id.user_to_add);
-		final Bundle b=this.getIntent().getExtras();
-		final String username=b.getString("Username");
-		Toast.makeText(getApplicationContext(),username,
-				Toast.LENGTH_SHORT).show();
-		
+		final Bundle b = this.getIntent().getExtras();
+		final String username = b.getString("Username");
+		Toast.makeText(getApplicationContext(), username, Toast.LENGTH_SHORT)
+				.show();
+
 		Button add = (Button) findViewById(R.id.add_button);
 
 		add.setOnClickListener(new OnClickListener() {
@@ -40,21 +40,42 @@ public class AddCard extends Activity {
 				final String usertoadd = toAddusername.getText().toString();
 				ParseQuery query = new ParseQuery("Card");
 				query.whereEqualTo("Username", usertoadd);
-				
+
 				query.getFirstInBackground(new GetCallback() {
 
 					public void done(ParseObject foundCard, ParseException arg1) {
-						if(foundCard!=null){
-						ParseObject membership=new ParseObject("Memberships");
-						membership.put("Owner", b.getString("Username"));
-						membership.put("Contact", usertoadd);
-						membership.saveInBackground();
-						Toast.makeText(getApplicationContext(), "Card Added",
-								Toast.LENGTH_SHORT).show();
-						finish();
-						}
-						else{
-							Toast.makeText(getApplicationContext(),"Username enterned does not exist.",
+						if (foundCard != null) {
+
+							ParseQuery dup = new ParseQuery("Memberships");
+							dup.whereEqualTo("Owner", b.getString("Username"));
+							dup.whereEqualTo("Contact", usertoadd);
+
+							dup.getFirstInBackground(new GetCallback() {
+
+								public void done(ParseObject founddup,
+										ParseException arg1) {
+									if (founddup == null) {
+										ParseObject membership = new ParseObject(
+												"Memberships");
+										membership.put("Owner",
+												b.getString("Username"));
+										membership.put("Contact", usertoadd);
+										membership.saveInBackground();
+										Toast.makeText(getApplicationContext(),
+												"Card Added",
+												Toast.LENGTH_SHORT).show();
+										finish();
+									} else {
+										Toast.makeText(
+												getApplicationContext(),
+												"You already have the card for this user.",
+												Toast.LENGTH_LONG).show();
+									}
+								}
+							});
+						} else {
+							Toast.makeText(getApplicationContext(),
+									"Username enterned does not exist.",
 									Toast.LENGTH_LONG).show();
 						}
 					}
