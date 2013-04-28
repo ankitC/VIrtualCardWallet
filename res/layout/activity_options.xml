@@ -9,13 +9,14 @@
     tools:context=".Options" >
 
     <Button
-        android:id="@+id/edit_card_button"
+        android:id="@+id/add_card_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="63dp"
-        android:text="Edit My Card" />
+        android:onClick="onClick1"
+        android:text="Add a Card" />
 
     <Button
         android:id="@+id/button2"
@@ -23,17 +24,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/add_card_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="50dp"
         android:onClick="onClick2"
         android:text="View All Cards" />
 
     <Button
-        android:id="@+id/add_card_button"
+        android:id="@+id/edit_card_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/button2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
-        android:text="@string/add_card_button" />
+        android:layout_marginTop="63dp"
+        android:onClick="onClick3"
+        android:text="Edit My Card" />
 
 </RelativeLayout>
