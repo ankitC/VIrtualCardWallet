@@ -38,13 +38,21 @@ public class AddCard extends Activity {
 
 			public void onClick(View v) {
 				final String usertoadd = toAddusername.getText().toString();
+
 				ParseQuery query = new ParseQuery("Card");
 				query.whereEqualTo("Username", usertoadd);
 
 				query.getFirstInBackground(new GetCallback() {
 
 					public void done(ParseObject foundCard, ParseException arg1) {
-						if (foundCard != null) {
+
+						if (usertoadd.equals(b.getString("Username"))) {
+							Toast.makeText(getApplicationContext(),
+									"Invalid Input.", Toast.LENGTH_SHORT)
+									.show();
+							finish();
+
+						} else if (foundCard != null) {
 
 							ParseQuery dup = new ParseQuery("Memberships");
 							dup.whereEqualTo("Owner", b.getString("Username"));
@@ -69,7 +77,7 @@ public class AddCard extends Activity {
 										Toast.makeText(
 												getApplicationContext(),
 												"You already have the card for this user.",
-												Toast.LENGTH_LONG).show();
+												Toast.LENGTH_SHORT).show();
 									}
 								}
 							});
