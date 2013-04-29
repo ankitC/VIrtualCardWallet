@@ -23,9 +23,9 @@ public class DetailView extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detail_view);
 
-		Bundle b=this.getIntent().getExtras();
-		String username=b.getString("Username").toString();
-
+		final Bundle b=this.getIntent().getExtras();
+		String username=b.getString("selectedCardUsername").toString();
+		Toast.makeText(getApplicationContext(), username, Toast.LENGTH_LONG);
 
 		final ParseQuery query = new ParseQuery("Card");
 		query.whereEqualTo("Username", username);
@@ -127,6 +127,31 @@ public class DetailView extends Activity {
 
 			}
 		});
+	
+		Button delete= (Button) findViewById(R.id.delete_button);
+		delete.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				ParseQuery delQuery=new ParseQuery("Memberships");
+				
+				delQuery.whereEqualTo("Owner",b.getString("MyUsername").toString());
+				delQuery.whereEqualTo("Contact", b.getString("selectedCardUsername").toString());
+				
+				delQuery.getFirstInBackground(new GetCallback() {
+					
+					@Override
+					public void done(ParseObject card, ParseException arg1) {
+						// TODO Auto-generated method stub
+						card.deleteInBackground();
+						Toast.makeText(getApplicationContext(), "Card Deleted", Toast.LENGTH_SHORT);
+						finish();
+					}
+				});
+				
+			}
+		});
+	
 	}
 
 	public void getNavigation(String address) {

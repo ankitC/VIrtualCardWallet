@@ -104,7 +104,16 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/mapView"
         android:layout_alignBottom="@+id/mapView"
-        android:layout_alignLeft="@+id/call"
+        android:layout_centerHorizontal="true"
         android:text="@string/LinkedIn_Icon" />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/social"
+        android:layout_alignBottom="@+id/social"
+        android:layout_alignLeft="@+id/message"
+        android:text="@string/delete_button" />
 
 </RelativeLayout>
