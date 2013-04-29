@@ -246,10 +246,10 @@ public class LoginActivity extends Activity {
 			req.put("username", mUsername);
 			req.put("password", mPassword);
 		
-<<<<<<< HEAD
+
 			try {
 				 ip = new String("128.237.218.190");	 
-=======
+
 		/*	try {
 				 ip = new String("128.237.221.2");	 
 >>>>>>> b4f60f9e92f1e9991334503817d75832af5f2697
