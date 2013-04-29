@@ -8,7 +8,7 @@ Changes Log:
   Login has been bypassed due to the lack of Server. Shall restore.
   Need to check the Signup and Make card once server is up. Feeling lazy to bypass Signup activity.
   BUG FIXED: List Card to detail View takes you to the correct card always.
-  
+  Added the Delete Card method. Fixed bug related to getting back to the activity list cards. Now fine tuning the access. 
 
 
 Changes required:
@@ -17,7 +17,6 @@ Changes required:
   Try to add backgrounds to the spinners.
   Test the SignUp and Make Card activities.
   Work on other backgrounds.
-  To Add: Delete card.
   Change the Buttons on all activities to be uniform.
   Documentation.....
   More testing.
