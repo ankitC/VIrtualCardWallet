@@ -246,8 +246,13 @@ public class LoginActivity extends Activity {
 			req.put("username", mUsername);
 			req.put("password", mPassword);
 		
+<<<<<<< HEAD
 			try {
 				 ip = new String("128.237.218.190");	 
+=======
+		/*	try {
+				 ip = new String("128.237.221.2");	 
+>>>>>>> b4f60f9e92f1e9991334503817d75832af5f2697
 				 port = 1234;
 				 Log.d("ClientActivity", "C: Connecting...");
 				 client = new Socket(ip, port);
@@ -268,13 +273,13 @@ public class LoginActivity extends Activity {
 			} catch (IOException e) {
 				
 				e.printStackTrace();
-			}
+			}/*
 			 /**
 			  *  Communicate with the server
 			  *  Send the initial username and password
 			  */
-			 out.write(req.toString());
-			 out.flush();
+			//			 out.write(req.toString());
+			//			 out.flush();
 //			 out.write(elements.toString());
 //			 out.flush();
 			/**
@@ -283,17 +288,17 @@ public class LoginActivity extends Activity {
 			 JSONParser parser = new JSONParser();
 				JSONObject tmp = new JSONObject();
 				do{
-					try {
-						reply = new String(in.readLine());
-						tmp = (JSONObject) parser.parse(reply);
-						reply = (String) tmp.get("response");
-					} catch (IOException e) {
+				//	try {
+						reply = "Yes";//new String(in.readLine());
+					//	tmp = (JSONObject) parser.parse(reply);
+					//	reply = (String) tmp.get("response");
+					//	} catch (IOException e) {
 				
-						e.printStackTrace();
-					} catch (ParseException e) {
+					//	e.printStackTrace();
+					//} catch (ParseException e) {
 						
-						e.printStackTrace();
-					}
+				//		e.printStackTrace();
+					//}
 				}while((!reply.equals("Yes")) && (!reply.equals("No")));
 			if(reply.equals("Yes")){
 				//Success Go to app
@@ -304,12 +309,12 @@ public class LoginActivity extends Activity {
 				loginverified = false;
 			}
 			// TODO: attempt authentication against a network service
-			try {
+		/*	try {
 				client.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 			return loginverified;
 			
 		}

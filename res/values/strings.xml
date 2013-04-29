@@ -31,5 +31,6 @@
     <string name="Blank">" "</string>
     <string name="view_all_card">View Cards</string>
     <string name="edit_my_card">Edit My Card</string>
+    <string name="delete_button">Delete</string>
 
 </resources>
