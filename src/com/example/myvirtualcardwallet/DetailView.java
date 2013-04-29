@@ -120,7 +120,7 @@ public class DetailView extends Activity {
 
 					@Override
 					public void onClick(View v) {
-						launchLI(selectedCard);
+						launchLI();
 
 					}
 				});
@@ -140,7 +140,7 @@ public class DetailView extends Activity {
 
 	}
 
-	public void launchLI(Card card) {
+	public void launchLI() {
 
 		String uri = "http://www.linkedin.com/search/fpsearch?type=people&keywords=Khushal+Shah&pplSearchOrigin=GLHD&pageKey=member-home";
 		Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage(
