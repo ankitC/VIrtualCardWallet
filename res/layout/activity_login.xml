@@ -17,7 +17,8 @@
             style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+             />
 
         <TextView
             android:id="@+id/login_status_message"
@@ -34,11 +35,14 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent" 
+        android:background="@drawable/shake_hands">
 
         <LinearLayout
             style="@style/LoginFormContainer"
-            android:orientation="vertical" >
+            android:orientation="vertical" 
+            android:layout_marginTop="220dp"
+            >
 
             <EditText
                 android:id="@+id/username"
@@ -47,7 +51,10 @@
                 android:hint="@string/prompt_username"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true" 
+                android:textColorHint="@color/Crimson"
+                android:textColor="@color/Red"
+                android:textStyle="normal|bold"/>
 
             <EditText
                 android:id="@+id/password"
@@ -59,7 +66,11 @@
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textColorHint="@color/Crimson" 
+                android:textColor="@color/Red"
+                android:textStyle="normal|bold"
+                />
 
             <Button
                 android:id="@+id/sign_in_button"
@@ -67,9 +78,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
                 android:paddingLeft="32dp"
                 android:paddingRight="32dp"
-                android:text="@string/sign_in_button" />
+                android:paddingBottom="10dp"
+                android:text="@string/sign_in_button" 
+                android:background="@drawable/round"/>
 
             <Button
                 android:id="@+id/sign_up_button"
@@ -77,7 +91,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:onClick="OnClick1"
-                android:text="@string/Register_button" />
+                android:text="@string/Register_button" 
+                android:background="@drawable/round"/>
 
         </LinearLayout>
     </ScrollView>

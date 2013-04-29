@@ -2,40 +2,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:contentDescription="@string/title_activity_add_card"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Options" >
 
-    <Button
-        android:id="@+id/add_card_button"
+    <ImageButton
+        android:id="@+id/add_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/view_all_card_image"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp"
+        android:layout_marginBottom="48dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/title_activity_add_card"
         android:onClick="onClick1"
-        android:text="Add a Card" />
+        android:src="@drawable/user_add" />
 
-    <Button
-        android:id="@+id/button2"
+    <ImageButton
+        android:id="@+id/view_all_card_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/add_card_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_alignLeft="@+id/add_image"
+        android:layout_centerVertical="true"
+        android:background="@color/white"
+        android:contentDescription="@string/title_activity_edit_card"
         android:onClick="onClick2"
-        android:text="View All Cards" />
+        android:src="@drawable/folder_new" />
 
-    <Button
-        android:id="@+id/edit_card_button"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
+        android:layout_above="@+id/view_all_card_image"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/add_card_button"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/view_all_card_image"
+        android:layout_below="@+id/view_all_card_image"
+        android:text="@string/view_all_card"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageButton
+        android:id="@+id/edit_card_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/view_all_card_image"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="32dp"
+        android:background="@color/white"
+        android:contentDescription="@string/title_activity_edit_card"
         android:onClick="onClick3"
-        android:text="Edit My Card" />
+        android:src="@drawable/edit_card_image" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/edit_card_image"
+        android:text="@string/edit_my_card"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

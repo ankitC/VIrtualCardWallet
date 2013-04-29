@@ -1,8 +1,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 android:id="@+id/ScrollView01"
 android:layout_width="fill_parent"
-android:layout_height="fill_parent" >
-
+android:layout_height="fill_parent" 
+android:background="@drawable/networking1" >
 <LinearLayout 
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -142,7 +142,9 @@ android:layout_height="fill_parent" >
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:onClick="onSubmitListener"
-            android:text="Submit" />
+            android:text="Submit" 
+            android:background="@drawable/round"
+            />
 
     </LinearLayout>
 

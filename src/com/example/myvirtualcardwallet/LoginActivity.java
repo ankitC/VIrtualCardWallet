@@ -29,6 +29,8 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.parse.Parse;
 import com.parse.ParseAnalytics;
 import com.parse.ParseObject;
@@ -245,7 +247,7 @@ public class LoginActivity extends Activity {
 			req.put("password", mPassword);
 		
 			try {
-				 ip = new String("192.168.1.15");	 
+				 ip = new String("128.237.221.2");	 
 				 port = 1234;
 				 Log.d("ClientActivity", "C: Connecting...");
 				 client = new Socket(ip, port);
@@ -341,8 +343,10 @@ public class LoginActivity extends Activity {
 		        finish();
 			} else {
 
-				mPasswordView
-						.setError(getString(R.string.error_incorrect_password));
+				Toast.makeText(getApplicationContext(), "Username/Password did not match",Toast.LENGTH_LONG).show();
+				mUsernameView.setError(getString(R.string.error_field_required));
+		mUsernameView.requestFocus();
+				mPasswordView.setError(getString(R.string.error_incorrect_password));
 				mPasswordView.requestFocus();
 			}
 		}
