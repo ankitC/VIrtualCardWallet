@@ -11,7 +11,7 @@
     <string name="map_button">Locate</string>
     <string name="title_activity_locate">LocateActivity</string>
     <string name="LinkedIn_Icon">LinkedIn</string>
-    <string name="prompt_username">username</string>
+    <string name="prompt_username">Username</string>
     <string name="Register_button">Register</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="prompt_name">Name</string>
@@ -29,5 +29,7 @@
     <string name="telephone">Telephone</string>
     <string name="title_activity_list_cards">ListCardsActivity</string>
     <string name="Blank">" "</string>
+    <string name="view_all_card">View Cards</string>
+    <string name="edit_my_card">Edit My Card</string>
 
 </resources>
