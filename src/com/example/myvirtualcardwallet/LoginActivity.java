@@ -273,8 +273,8 @@ public class LoginActivity extends Activity {
 			  *  Communicate with the server
 			  *  Send the initial username and password
 			  */
-			out.write(req.toString());
-			out.flush();
+			 out.write(req.toString());
+			 out.flush();
 //			 out.write(elements.toString());
 //			 out.flush();
 			/**
@@ -287,7 +287,7 @@ public class LoginActivity extends Activity {
 						reply = new String(in.readLine());
 						tmp = (JSONObject) parser.parse(reply);
 						reply = (String) tmp.get("response");
-						} catch (IOException e) {
+					} catch (IOException e) {
 				
 						e.printStackTrace();
 					} catch (ParseException e) {
@@ -304,12 +304,12 @@ public class LoginActivity extends Activity {
 				loginverified = false;
 			}
 			// TODO: attempt authentication against a network service
-		/*	try {
+			try {
 				client.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}*/
+			}
 			return loginverified;
 			
 		}
