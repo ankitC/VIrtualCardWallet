@@ -2,13 +2,43 @@
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
    
-    <item android:drawable="@color/LightSkyBlue"
-      android:state_pressed="true">
+   <item android:state_pressed="true">
+        <shape>
+            <gradient
+                android:startColor="@color/DarkBlue"
+                android:endColor="@color/MediumTurquoise"
+                android:angle="270" />
+       <stroke android:width="5px" android:color="@color/DarkBlue" />      
+           <corners android:bottomRightRadius="30dip"
+                android:topLeftRadius="30dip"/>
+            </shape>
     </item>
-          
-    <item android:drawable="@android:color/transparent"
-      android:state_focused="true">
-        </item>   
+   <item android:state_focused="true" >
+        <shape>
+            <gradient
+                android:endColor="@color/orange4"
+                android:startColor="@color/orange5"
+                android:angle="270" />
+     
+             <corners android:bottomRightRadius="30dip"
+                android:topLeftRadius="30dip"/>
+    
+   <stroke android:width="5px" android:color="@color/DarkBlue" />
+                    </shape>
+    </item>
+  <item >  
+           
+        <shape>
+            <gradient
+                android:endColor="@android:color/transparent"
+                android:startColor="@android:color/transparent"
+                android:angle="270" />
+             <stroke android:width="5px" android:color="@color/DarkBlue" />         
+             <corners android:bottomRightRadius="30dip"
+                android:topLeftRadius="30dip"/>
+        </shape>
+    </item>
+   
        
 
 </selector>
