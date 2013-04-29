@@ -95,6 +95,8 @@
         <activity
             android:name="com.example.myvirtualcardwallet.ListCardsActivity"
             android:label="@string/title_activity_list_cards" 
+            android:clearTaskOnLaunch="true"
+            android:noHistory="true"
             android:screenOrientation="portrait">
         </activity>
     </application>

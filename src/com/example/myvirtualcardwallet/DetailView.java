@@ -23,13 +23,10 @@ public class DetailView extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detail_view);
 
-		Bundle b=this.getIntent().getExtras();
-		String username=b.getString("Username").toString();
-		Toast.makeText(getApplicationContext(),username, 
-				          Toast.LENGTH_SHORT).show();
+		final Bundle b=this.getIntent().getExtras();
+		String username=b.getString("selectedCardUsername").toString();
+		Toast.makeText(getApplicationContext(), username, Toast.LENGTH_LONG);
 
-
-		
 		final ParseQuery query = new ParseQuery("Card");
 		query.whereEqualTo("Username", username);
 		query.getFirstInBackground(new GetCallback(){
@@ -123,13 +120,38 @@ public class DetailView extends Activity {
 
 					@Override
 					public void onClick(View v) {
-						launchLI(selectedCard);
+						launchLI();
 
 					}
 				});
 
 			}
 		});
+	
+		Button delete= (Button) findViewById(R.id.delete_button);
+		delete.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				ParseQuery delQuery=new ParseQuery("Memberships");
+				
+				delQuery.whereEqualTo("Owner",b.getString("MyUsername").toString());
+				delQuery.whereEqualTo("Contact", b.getString("selectedCardUsername").toString());
+				
+				delQuery.getFirstInBackground(new GetCallback() {
+					
+					@Override
+					public void done(ParseObject card, ParseException arg1) {
+						// TODO Auto-generated method stub
+						card.deleteInBackground();
+						Toast.makeText(getApplicationContext(), "Card Deleted", Toast.LENGTH_SHORT);
+						finish();
+					}
+				});
+				
+			}
+		});
+	
 	}
 
 	public void getNavigation(String address) {
@@ -143,7 +165,7 @@ public class DetailView extends Activity {
 
 	}
 
-	public void launchLI(Card card) {
+	public void launchLI() {
 
 		String uri = "http://www.linkedin.com/search/fpsearch?type=people&keywords=Khushal+Shah&pplSearchOrigin=GLHD&pageKey=member-home";
 		Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage(

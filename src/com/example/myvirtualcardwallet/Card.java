@@ -1,5 +1,7 @@
 package com.example.myvirtualcardwallet;
 
+import java.io.File;
+
 public class Card {
 	public String name="myName";
 	public String designation="myDesignation";

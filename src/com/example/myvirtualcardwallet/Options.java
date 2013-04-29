@@ -47,7 +47,7 @@ public class Options extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent listCardIntent=new Intent(getApplicationContext(), DetailView.class);
+				Intent listCardIntent=new Intent(getApplicationContext(), ListCardsActivity.class);
 				listCardIntent.putExtras(bunName);
 				startActivity(listCardIntent);
 			}

@@ -26,10 +26,19 @@
     <string name="add_prompt">Enter the username of the person you want to add:</string>
     <string name="sign_in_button">Sign In</string>
     <string name="add">Add</string>
-    <string name="telephone">Telephone</string>
+    <string name="telephone">Telephone:</string>
     <string name="title_activity_list_cards">ListCardsActivity</string>
     <string name="Blank">" "</string>
     <string name="view_all_card">View Cards</string>
     <string name="edit_my_card">Edit My Card</string>
+    <string name="delete_button">Delete</string>
+    <string name="editPhoto">Edit Photo</string>
+    <string name="addPhotoButton">Add Photo</string>
+    <string name="name">Name:</string>
+    <string name="designation">Designation:</string>
+    <string name="company">Company:</string>
+    <string name="email">Email:</string>
+    <string name="address">Address:</string>
+    <string name="submit_button">Submit</string>
 
 </resources>
