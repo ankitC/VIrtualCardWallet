@@ -31,7 +31,7 @@
         android:background="@color/white"
         android:contentDescription="@string/title_activity_edit_card"
         android:onClick="onClick2"
-        android:src="@drawable/folder_new" />
+        android:src="@drawable/viewall" />
 
     <TextView
         android:id="@+id/textView1"

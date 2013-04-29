@@ -54,7 +54,8 @@
                 android:singleLine="true" 
                 android:textColorHint="@color/Crimson"
                 android:textColor="@color/Red"
-                android:textStyle="normal|bold"/>
+                android:textStyle="normal|bold"
+                android:background="@drawable/button_highlight"/>
 
             <EditText
                 android:id="@+id/password"
@@ -70,7 +71,7 @@
                 android:textColorHint="@color/Crimson" 
                 android:textColor="@color/Red"
                 android:textStyle="normal|bold"
-                />
+                android:background="@drawable/button_highlight" />
 
             <Button
                 android:id="@+id/sign_in_button"
