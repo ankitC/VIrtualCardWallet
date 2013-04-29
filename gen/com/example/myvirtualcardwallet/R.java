@@ -154,19 +154,28 @@ public final class R {
         public static final int aqua=0x7f040009;
         public static final int black=0x7f04000f;
         public static final int blue=0x7f04000d;
+        public static final int blue2=0x7f0400a0;
+        public static final int blue25=0x7f0400a1;
         public static final int fuchsia=0x7f040002;
         public static final int gray=0x7f040005;
         public static final int green=0x7f04000c;
+        public static final int grey05=0x7f0400a2;
         public static final int lime=0x7f04000a;
         public static final int maroon=0x7f040008;
         public static final int navy=0x7f04000e;
         public static final int olive=0x7f040006;
+        public static final int orange4=0x7f04009e;
+        public static final int orange5=0x7f04009f;
         public static final int purple=0x7f040007;
         public static final int red=0x7f040003;
         public static final int silver=0x7f040004;
         public static final int teal=0x7f04000b;
         public static final int white=0x7f040000;
+        public static final int white1=0x7f0400a3;
+        public static final int white2=0x7f0400a4;
         public static final int yellow=0x7f040001;
+        public static final int yellow1=0x7f04009c;
+        public static final int yellow2=0x7f04009d;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -180,36 +189,38 @@ public final class R {
     }
     public static final class drawable {
         public static final int add=0x7f020000;
-        public static final int business_contact=0x7f020001;
-        public static final int business_people_01=0x7f020002;
-        public static final int button_highlight=0x7f020003;
-        public static final int card=0x7f020004;
-        public static final int card_deck=0x7f020005;
-        public static final int card_list=0x7f020006;
-        public static final int cardstack=0x7f020007;
-        public static final int edit_card=0x7f020008;
-        public static final int edit_card_image=0x7f020009;
-        public static final int edit_user=0x7f02000a;
-        public static final int folder=0x7f02000b;
-        public static final int hands=0x7f02000c;
-        public static final int ic_launcher=0x7f02000d;
-        public static final int kaddressbook=0x7f02000e;
-        public static final int linkedin=0x7f02000f;
-        public static final int login=0x7f020010;
-        public static final int login1=0x7f020011;
-        public static final int login2=0x7f020012;
-        public static final int mypc_add=0x7f020013;
-        public static final int networking1=0x7f020014;
-        public static final int round=0x7f020015;
-        public static final int save_icon=0x7f020016;
-        public static final int shake_hands=0x7f020017;
-        public static final int user_add=0x7f020018;
-        public static final int user_remove=0x7f020019;
-        public static final int useradd1=0x7f02001a;
-        public static final int usercard_01=0x7f02001b;
-        public static final int viewall=0x7f02001c;
-        public static final int viewcard=0x7f02001d;
-        public static final int wallet=0x7f02001e;
+        public static final int business=0x7f020001;
+        public static final int business_contact=0x7f020002;
+        public static final int business_people_01=0x7f020003;
+        public static final int button_highlight=0x7f020004;
+        public static final int card=0x7f020005;
+        public static final int card_deck=0x7f020006;
+        public static final int card_list=0x7f020007;
+        public static final int cardstack=0x7f020008;
+        public static final int edit_card=0x7f020009;
+        public static final int edit_card_image=0x7f02000a;
+        public static final int edit_user=0x7f02000b;
+        public static final int folder=0x7f02000c;
+        public static final int hands=0x7f02000d;
+        public static final int handshake=0x7f02000e;
+        public static final int ic_launcher=0x7f02000f;
+        public static final int kaddressbook=0x7f020010;
+        public static final int linkedin=0x7f020011;
+        public static final int login=0x7f020012;
+        public static final int login1=0x7f020013;
+        public static final int login2=0x7f020014;
+        public static final int mypc_add=0x7f020015;
+        public static final int networking1=0x7f020016;
+        public static final int round=0x7f020017;
+        public static final int save_icon=0x7f020018;
+        public static final int shake_hands=0x7f020019;
+        public static final int user_add=0x7f02001a;
+        public static final int user_remove=0x7f02001b;
+        public static final int useradd1=0x7f02001c;
+        public static final int usercard_01=0x7f02001d;
+        public static final int viewall=0x7f02001e;
+        public static final int viewcard=0x7f02001f;
+        public static final int wallet=0x7f020020;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f09000f;
@@ -262,7 +273,7 @@ public final class R {
         public static final int textDesignation=0x7f090026;
         public static final int textEmail=0x7f090008;
         public static final int textNumber=0x7f090007;
-        public static final int textView1=0x7f09002f;
+        public static final int textView1=0x7f09002e;
         public static final int textView2=0x7f090011;
         public static final int textView3=0x7f090013;
         public static final int textView4=0x7f090015;
@@ -270,7 +281,7 @@ public final class R {
         public static final int textView6=0x7f09000a;
         public static final int user_to_add=0x7f090001;
         public static final int username=0x7f09001f;
-        public static final int view_all_card_image=0x7f09002e;
+        public static final int view_all_card_image=0x7f09002f;
     }
     public static final class layout {
         public static final int activity_add_card=0x7f030000;

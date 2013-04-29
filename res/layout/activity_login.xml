@@ -11,7 +11,8 @@
         android:layout_gravity="center"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:visibility="gone" >
+        android:visibility="gone" 
+        android:focusableInTouchMode="true">
 
         <ProgressBar
             style="?android:attr/progressBarStyleLarge"
@@ -36,7 +37,7 @@
         android:id="@+id/login_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent" 
-        android:background="@drawable/shake_hands">
+        android:background="@drawable/handshake">
 
         <LinearLayout
             style="@style/LoginFormContainer"
@@ -52,10 +53,10 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true" 
-                android:textColorHint="@color/Crimson"
+                android:textColorHint="@color/MediumBlue"
                 android:textColor="@color/Red"
-                android:textStyle="normal|bold"
-                android:background="@drawable/button_highlight"/>
+               
+                />
 
             <EditText
                 android:id="@+id/password"
@@ -68,10 +69,10 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textColorHint="@color/Crimson" 
+                android:textColorHint="@color/MediumBlue" 
                 android:textColor="@color/Red"
-                android:textStyle="normal|bold"
-                android:background="@drawable/button_highlight" />
+                
+                 />
 
             <Button
                 android:id="@+id/sign_in_button"
@@ -84,7 +85,9 @@
                 android:paddingRight="32dp"
                 android:paddingBottom="10dp"
                 android:text="@string/sign_in_button" 
-                android:background="@drawable/round"/>
+                android:background="@drawable/button_highlight"
+                android:textColor="@color/Black"
+                  android:textStyle="normal|bold"/>
 
             <Button
                 android:id="@+id/sign_up_button"
@@ -93,7 +96,9 @@
                 android:layout_gravity="right"
                 android:onClick="OnClick1"
                 android:text="@string/Register_button" 
-                android:background="@drawable/round"/>
+                android:background="@drawable/button_highlight"
+                android:textColor="@color/Black"
+                  android:textStyle="normal|bold"/>
 
         </LinearLayout>
     </ScrollView>

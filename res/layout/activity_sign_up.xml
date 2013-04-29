@@ -102,7 +102,8 @@
                 android:paddingLeft="32dp"
                 android:paddingRight="32dp"
                 android:text="@string/register" 
-                android:background="@drawable/round"/>
+                android:background="@drawable/button_highlight"
+               />
 
         </LinearLayout>
     </ScrollView>
