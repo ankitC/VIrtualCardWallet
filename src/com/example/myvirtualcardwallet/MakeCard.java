@@ -41,8 +41,7 @@ public class MakeCard extends Activity {
 		imageView = (ImageView) findViewById(R.id.add_photo_image);
 		bitmap=BitmapFactory.decodeResource(getResources(), R.drawable.photo_not_available_large);
 		imageView.setImageBitmap(bitmap);
-		imageView.bringToFront();
-		
+		imageView.bringToFront();		
 	}
 
 	@Override
