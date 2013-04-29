@@ -27,7 +27,7 @@ public class MakeCard extends Activity {
 	private Bitmap bitmap;
 	private ImageView imageView;
 	private String selectedImagePath;
-	helloworld;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
