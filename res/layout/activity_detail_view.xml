@@ -120,4 +120,13 @@
         android:layout_alignLeft="@+id/message"
         android:background="@drawable/user_remove" />
 
+    <Button
+        android:id="@+id/showImage_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mapView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:text="@string/show_image" />
+
 </RelativeLayout>
