@@ -348,6 +348,8 @@ public class SignUpActivity extends Activity {
 		        Bundle b= new Bundle();
 		        b.putString("Username",mUsername);
 		        b.putString("Name", mName);
+		        b.putString("Email", mEmail);
+		        
 		        home.putExtras(b);
 		        startActivity(home);
 		        

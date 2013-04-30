@@ -39,8 +39,11 @@ public class MakeCard extends Activity {
 		setContentView(R.layout.activity_make_card);		
 		myCard.username=getIntent().getExtras().getString("Username");
 		myCard.name=getIntent().getExtras().getString("Name");
+		myCard.email=getIntent().getExtras().getString("Email");
 		EditText name= (EditText)findViewById(R.id.mc_editname);
+		EditText email=(EditText)findViewById(R.id.editEmail);
 		name.setText(myCard.name);
+		email.setText(myCard.email);
 		Parse.initialize(this, "HIWiddAFOEElxePoa7qHp72CHvwtNuqOXf1bXkjf", "aJpMrnM1WfUOpLGGSBUSl4pLPh4vVSdQrgL4VBi3"); 
 		ParseAnalytics.trackAppOpened(getIntent());
 		imageView = (ImageView) findViewById(R.id.add_photo_image);
@@ -58,13 +61,14 @@ public class MakeCard extends Activity {
 
 	public void onSubmitListener(View view)
 	{
-		//EditText name = (EditText)findViewById(R.id.editName);
+		EditText name = (EditText)findViewById(R.id.mc_editname);
 		EditText address = (EditText)findViewById(R.id.editAddress);
 		EditText designation = (EditText)findViewById(R.id.editDesignation);
 		EditText company = (EditText)findViewById(R.id.editCompany);
 		EditText email = (EditText)findViewById(R.id.editEmail);
 		EditText number = (EditText)findViewById(R.id.editNumber);
-		//myCard= new Card();
+		
+		myCard.name=name.getText().toString();
 		myCard.address=address.getText().toString();
 		myCard.designation=designation.getText().toString();
 		myCard.company=company.getText().toString();

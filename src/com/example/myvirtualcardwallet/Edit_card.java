@@ -201,6 +201,7 @@ public class Edit_card extends Activity {
 				if (data.getExtras() != null) {
 					// here is the image from camera
 					bitmap = (Bitmap) data.getExtras().get("data");
+					imageView=(ImageView) findViewById(R.id.edit_photo_image);
 					imageView.setImageBitmap(bitmap);
 				}
 			}
