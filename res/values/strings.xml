@@ -40,5 +40,7 @@
     <string name="email">Email:</string>
     <string name="address">Address:</string>
     <string name="submit_button">Submit</string>
+    <string name="show_image">Show Image</string>
+    <string name="title_activity_show_image">ShowImage</string>
 
 </resources>

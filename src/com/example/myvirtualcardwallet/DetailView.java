@@ -1,18 +1,22 @@
 package com.example.myvirtualcardwallet;
 
 import com.parse.GetCallback;
+import com.parse.GetDataCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,15 +27,15 @@ public class DetailView extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detail_view);
 
-		final Bundle b=this.getIntent().getExtras();
-		String username=b.getString("selectedCardUsername").toString();
+		final Bundle b = this.getIntent().getExtras();
+		final String username = b.getString("selectedCardUsername").toString();
 		Toast.makeText(getApplicationContext(), username, Toast.LENGTH_LONG);
 
 		final ParseQuery query = new ParseQuery("Card");
 		query.whereEqualTo("Username", username);
-		query.getFirstInBackground(new GetCallback(){
+		query.getFirstInBackground(new GetCallback() {
 
-			public void done(ParseObject foundCard, ParseException arg1) {
+			public void done(final ParseObject foundCard, ParseException arg1) {
 
 				final Card selectedCard = new Card();
 
@@ -125,33 +129,51 @@ public class DetailView extends Activity {
 					}
 				});
 
+				Button showImage = (Button) findViewById(R.id.showImage_button);
+				showImage.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+									
+						Intent showImageIntent = new Intent(getApplicationContext(), ShowImage.class);
+						Bundle imageBundle = new Bundle();
+						imageBundle.putString("Username", username);
+						showImageIntent.putExtras(imageBundle);
+						startActivity(showImageIntent);	
+
+					}
+				});
+
 			}
 		});
-	
-		Button delete= (Button) findViewById(R.id.delete_button);
+
+		Button delete = (Button) findViewById(R.id.delete_button);
 		delete.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				ParseQuery delQuery=new ParseQuery("Memberships");
-				
-				delQuery.whereEqualTo("Owner",b.getString("MyUsername").toString());
-				delQuery.whereEqualTo("Contact", b.getString("selectedCardUsername").toString());
-				
+				ParseQuery delQuery = new ParseQuery("Memberships");
+
+				delQuery.whereEqualTo("Owner", b.getString("MyUsername")
+						.toString());
+				delQuery.whereEqualTo("Contact",
+						b.getString("selectedCardUsername").toString());
+
 				delQuery.getFirstInBackground(new GetCallback() {
-					
+
 					@Override
 					public void done(ParseObject card, ParseException arg1) {
 						// TODO Auto-generated method stub
 						card.deleteInBackground();
-						Toast.makeText(getApplicationContext(), "Card Deleted", Toast.LENGTH_SHORT);
+						Toast.makeText(getApplicationContext(), "Card Deleted",
+								Toast.LENGTH_SHORT);
 						finish();
 					}
 				});
-				
+
 			}
 		});
-	
+
 	}
 
 	public void getNavigation(String address) {
