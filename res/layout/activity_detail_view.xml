@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
 
     <ImageView
         android:id="@+id/add_photo_image"
@@ -17,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/add_photo_image"
         android:layout_centerVertical="true"
-        android:text="@string/mail_button" />
+        android:background="@drawable/email" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -31,40 +32,42 @@
             android:id="@+id/makecard_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/textCompany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+           android:layout_marginLeft="10dp"
            android:text="TextView" />
 
         <TextView
             android:id="@+id/textNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+ android:layout_marginLeft="10dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/textEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-           
+            android:layout_marginLeft="10dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/textAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            
+             android:layout_marginLeft="10dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-           
+            android:layout_marginLeft="10dp"
             android:text="TextView" />
 
     </LinearLayout>
@@ -77,7 +80,7 @@
         android:layout_alignBottom="@+id/email"
         android:layout_marginLeft="19dp"
         android:layout_toRightOf="@+id/email"
-        android:text="@string/call_button" />
+       android:background="@drawable/phone" />
 
     <Button
         android:id="@+id/message"
@@ -87,7 +90,8 @@
         android:layout_alignBottom="@+id/call"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/call"
-        android:text="@string/message_button" />
+      
+        android:background="@drawable/sms" />
 
     <Button
         android:id="@+id/mapView"
@@ -96,7 +100,7 @@
         android:layout_alignRight="@+id/email"
         android:layout_below="@+id/email"
         android:layout_marginTop="20dp"
-        android:text="@string/map_button" />
+        android:background="@drawable/locate" />
 
     <Button
         android:id="@+id/social"
@@ -105,7 +109,7 @@
         android:layout_alignBaseline="@+id/mapView"
         android:layout_alignBottom="@+id/mapView"
         android:layout_centerHorizontal="true"
-        android:text="@string/LinkedIn_Icon" />
+        android:background="@drawable/lin" />
 
     <Button
         android:id="@+id/delete_button"
@@ -114,6 +118,6 @@
         android:layout_alignBaseline="@+id/social"
         android:layout_alignBottom="@+id/social"
         android:layout_alignLeft="@+id/message"
-        android:text="@string/delete_button" />
+        android:background="@drawable/user_remove" />
 
 </RelativeLayout>

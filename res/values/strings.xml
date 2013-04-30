@@ -11,7 +11,7 @@
     <string name="map_button">Locate</string>
     <string name="title_activity_locate">LocateActivity</string>
     <string name="LinkedIn_Icon">LinkedIn</string>
-    <string name="prompt_username">Username</string>
+    <string name="prompt_username">Enter Username</string>
     <string name="Register_button">Register</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="prompt_name">Name</string>
@@ -22,7 +22,7 @@
     <string name="title_activity_options">Options</string>
     <string name="title_activity_edit_card">Edit_card</string>
     <string name="add_card_button">Add a Card</string>
-    <string name="title_activity_add_card">AddCardActivity</string>
+    <string name="title_activity_add_card">Add a Card..</string>
     <string name="add_prompt">Enter the username of the person you want to add:</string>
     <string name="sign_in_button">Sign In</string>
     <string name="add">Add</string>
@@ -40,5 +40,6 @@
     <string name="email">Email:</string>
     <string name="address">Address:</string>
     <string name="submit_button">Submit</string>
+    <string name="prompt_pass">Enter Password</string>
 
 </resources>
