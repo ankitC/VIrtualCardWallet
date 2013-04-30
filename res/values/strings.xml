@@ -41,5 +41,6 @@
     <string name="address">Address:</string>
     <string name="submit_button">Submit</string>
     <string name="prompt_pass">Enter Password</string>
+    <string name="title_show_image">Your image</string>
 
 </resources>
