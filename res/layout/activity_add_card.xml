@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".AddCard" 
-    android:background="@drawable/keep_me">
+    android:background="@drawable/add2">
 
     <EditText
         android:id="@+id/user_to_add"
@@ -20,16 +20,16 @@
         android:layout_weight="1"
         android:ems="15"
         android:hint="@string/prompt_username"
-        android:textSize="30dp"
-         />
+        android:inputType="textPersonName"
+        android:textSize="30dp" />
 
     <Button
         android:id="@+id/add_button"
         android:layout_width="400dp"
-        android:layout_height="100dp"
+        android:layout_height="95dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="82dp"
+        android:layout_marginBottom="90dp"
         android:background="@drawable/button_highlight1" />
 
 </RelativeLayout>

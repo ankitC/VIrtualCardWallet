@@ -2,7 +2,7 @@
     android:id="@+id/ScrollView01"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/networking1"
+    android:background="@drawable/login1"
     android:onClick="onAddPhotoListener" >
 
 <LinearLayout 
@@ -21,7 +21,9 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:onClick="onAddPhotoListener"
-            android:text="@string/addPhotoButton" />
+            android:text="@string/addPhotoButton" 
+            
+            android:background="@drawable/button_highlight"/>
 
     </LinearLayout>
 
@@ -119,7 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number|numberDecimal" />
 
     </LinearLayout>
 
@@ -174,9 +176,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/round"
+            
             android:onClick="onSubmitListener"
-            android:text="@string/submit_button" />
+            
+            android:background="@drawable/thumbs_up" 
+           
+            />
 
     </LinearLayout>
 
