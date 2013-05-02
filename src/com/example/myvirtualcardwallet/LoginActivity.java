@@ -59,17 +59,17 @@ public class LoginActivity extends Activity {
 	private View mLoginFormView;
 	private View mLoginStatusView;
 	private TextView mLoginStatusMessageView;
-	
+
 	//Network Information
-	 int port;
-	 String ip;
-	 Socket client;
-	 ServerSocket server;
-	 BufferedReader in;
-	 PrintWriter out;
-	 String reply;
-	 JSONObject elements;
-	 JSONObject req;
+	int port;
+	String ip;
+	Socket client;
+	ServerSocket server;
+	BufferedReader in;
+	PrintWriter out;
+	String reply;
+	JSONObject elements;
+	JSONObject req;
 	//Login Verified
 	boolean loginverified = false;
 
@@ -79,7 +79,7 @@ public class LoginActivity extends Activity {
 		setContentView(R.layout.activity_login);
 		Parse.initialize(this, "HIWiddAFOEElxePoa7qHp72CHvwtNuqOXf1bXkjf", "aJpMrnM1WfUOpLGGSBUSl4pLPh4vVSdQrgL4VBi3"); 
 		ParseAnalytics.trackAppOpened(getIntent());
-		
+
 		// Set up the login form.
 		mUsername = getIntent().getStringExtra(EXTRA_EMAIL);
 		mUsernameView = (EditText) findViewById(R.id.username);
@@ -87,16 +87,16 @@ public class LoginActivity extends Activity {
 
 		mPasswordView = (EditText) findViewById(R.id.password);
 		mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-					@Override
-					public boolean onEditorAction(TextView textView, int id,
-							KeyEvent keyEvent) {
-						if (id == R.id.login || id == EditorInfo.IME_NULL) {
-							attemptLogin();
-							return true;
-						}
-						return false;
-					}
-				});
+			@Override
+			public boolean onEditorAction(TextView textView, int id,
+					KeyEvent keyEvent) {
+				if (id == R.id.login || id == EditorInfo.IME_NULL) {
+					attemptLogin();
+					return true;
+				}
+				return false;
+			}
+		});
 
 		mLoginFormView = findViewById(R.id.login_form);
 		mLoginStatusView = findViewById(R.id.login_status);
@@ -124,10 +124,10 @@ public class LoginActivity extends Activity {
 		Intent intent = new Intent(this, SignUpActivity.class);
 		startActivity(intent);
 	}
-	
-	
-	
-	
+
+
+
+
 	/**
 	 * Attempts to sign in or register the account specified by the login form.
 	 * If there are form errors (invalid email, missing fields, etc.), the
@@ -166,11 +166,11 @@ public class LoginActivity extends Activity {
 			focusView = mUsernameView;
 			cancel = true;
 		}
-//		} else if (!mEmail.contains("@")) {
-//			mEmailView.setError(getString(R.string.error_invalid_email));
-//			focusView = mEmailView;
-//			cancel = true;
-//		}
+		//		} else if (!mEmail.contains("@")) {
+		//			mEmailView.setError(getString(R.string.error_invalid_email));
+		//			focusView = mEmailView;
+		//			cancel = true;
+		//		}
 
 		if (cancel) {
 			// There was an error; don't attempt login and focus the first
@@ -200,25 +200,25 @@ public class LoginActivity extends Activity {
 
 			mLoginStatusView.setVisibility(View.VISIBLE);
 			mLoginStatusView.animate().setDuration(shortAnimTime)
-					.alpha(show ? 1 : 0)
-					.setListener(new AnimatorListenerAdapter() {
-						@Override
-						public void onAnimationEnd(Animator animation) {
-							mLoginStatusView.setVisibility(show ? View.VISIBLE
-									: View.GONE);
-						}
-					});
+			.alpha(show ? 1 : 0)
+			.setListener(new AnimatorListenerAdapter() {
+				@Override
+				public void onAnimationEnd(Animator animation) {
+					mLoginStatusView.setVisibility(show ? View.VISIBLE
+							: View.GONE);
+				}
+			});
 
 			mLoginFormView.setVisibility(View.VISIBLE);
 			mLoginFormView.animate().setDuration(shortAnimTime)
-					.alpha(show ? 0 : 1)
-					.setListener(new AnimatorListenerAdapter() {
-						@Override
-						public void onAnimationEnd(Animator animation) {
-							mLoginFormView.setVisibility(show ? View.GONE
-									: View.VISIBLE);
-						}
-					});
+			.alpha(show ? 0 : 1)
+			.setListener(new AnimatorListenerAdapter() {
+				@Override
+				public void onAnimationEnd(Animator animation) {
+					mLoginFormView.setVisibility(show ? View.GONE
+							: View.VISIBLE);
+				}
+			});
 		} else {
 			// The ViewPropertyAnimator APIs are not available, so simply show
 			// and hide the relevant UI components.
@@ -236,65 +236,65 @@ public class LoginActivity extends Activity {
 		@SuppressWarnings("unchecked")
 		@Override
 		protected Boolean doInBackground(Void... params) {
-			
+
 			//Create Request message
 			req = new JSONObject();
 			req.put("request", "signin");
-			
+
 			//Create message to be sent username and pass
-//			elements = new JSONObject();
+			//			elements = new JSONObject();
 			req.put("username", mUsername);
 			req.put("password", mPassword);
-		
+
 			try {
-				 ip = new String("128.237.218.190");	 
-				 port = 1234;
-				 Log.d("ClientActivity", "C: Connecting...");
-				 client = new Socket(ip, port);
-				 server = null;	
+				ip = new String("128.237.218.190");	 
+				port = 1234;
+				Log.d("ClientActivity", "C: Connecting...");
+				client = new Socket(ip, port);
+				server = null;	
 			} catch (UnknownHostException e) {
-				
+
 				e.printStackTrace();
 			} catch (IOException e) {
-				
+
 				e.printStackTrace();
 			}
 			//>>>>>>>>>End Setup>>>>>>>>>>>>>>>>>>
-			 
-			 //Setup the Input and Output Stream
-			 try {
+
+			//Setup the Input and Output Stream
+			try {
 				out = new PrintWriter(client.getOutputStream());
 				in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 			} catch (IOException e) {
-				
+
 				e.printStackTrace();
 			}
-			 /**
-			  *  Communicate with the server
-			  *  Send the initial username and password
-			  */
-			 out.write(req.toString());
-			 out.flush();
-//			 out.write(elements.toString());
-//			 out.flush();
+			/**
+			 *  Communicate with the server
+			 *  Send the initial username and password
+			 */
+			out.write(req.toString());
+			out.flush();
+			//			 out.write(elements.toString());
+			//			 out.flush();
 			/**
 			 * 	 Wait for server to respond
 			 */
-			 JSONParser parser = new JSONParser();
-				JSONObject tmp = new JSONObject();
-				do{
-					try {
-						reply = new String(in.readLine());
-						tmp = (JSONObject) parser.parse(reply);
-						reply = (String) tmp.get("response");
-					} catch (IOException e) {
-				
-						e.printStackTrace();
-					} catch (ParseException e) {
-						
-						e.printStackTrace();
-					}
-				}while((!reply.equals("Yes")) && (!reply.equals("No")));
+			JSONParser parser = new JSONParser();
+			JSONObject tmp = new JSONObject();
+			do{
+				try {
+					reply = new String(in.readLine());
+					tmp = (JSONObject) parser.parse(reply);
+					reply = (String) tmp.get("response");
+				} catch (IOException e) {
+
+					e.printStackTrace();
+				} catch (ParseException e) {
+
+					e.printStackTrace();
+				}
+			}while((!reply.equals("Yes")) && (!reply.equals("No")));
 			if(reply.equals("Yes")){
 				//Success Go to app
 				loginverified = true;
@@ -311,7 +311,7 @@ public class LoginActivity extends Activity {
 				e.printStackTrace();
 			}
 			return loginverified;
-			
+
 		}
 
 		@Override
@@ -320,32 +320,32 @@ public class LoginActivity extends Activity {
 			showProgress(false);
 
 			if (success) {
-				
+
 				//Go to the App activity
 				Intent home = new Intent(getApplicationContext(), Options.class);
-				
+
 				//home.putExtra("username", mUsername );
 				//home.putExtra("ip", ip);
 				//home.putExtra("port", new Integer(port).toString());
 				Log.d("USERNAME-LOGIN_AC", mUsername);
-				
+
 				//Creating Bundle
 				Bundle b = new Bundle();
 				b.putString("Username", mUsername);
 				b.putString("ip", ip);
 				b.putInt("port", port);
-				
+
 				//adding bundle to intent
 				home.putExtras(b);
-		        home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		        startActivity(home);
-		        // Close Login Screen
-		        finish();
+				home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(home);
+				// Close Login Screen
+				finish();
 			} else {
 
 				Toast.makeText(getApplicationContext(), "Username/Password did not match",Toast.LENGTH_LONG).show();
 				mUsernameView.setError(getString(R.string.error_field_required));
-		mUsernameView.requestFocus();
+				mUsernameView.requestFocus();
 				mPasswordView.setError(getString(R.string.error_incorrect_password));
 				mPasswordView.requestFocus();
 			}
