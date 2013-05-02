@@ -23,7 +23,8 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:onClick="onEditPhotoListener"
-            android:text="@string/editPhoto" />
+            android:text="@string/editPhoto" 
+            android:background="@drawable/button_highlight"/>
 
     </LinearLayout>
 
@@ -172,11 +173,12 @@
 
         <Button
             android:id="@+id/editcard_save"
-           android:layout_width="wrap_content"
+           android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/round"
-            android:text="Save Changes" />
+            
+            android:text="Save Changes" 
+            android:background="@drawable/button_highlight"/>
 
     </LinearLayout>
 

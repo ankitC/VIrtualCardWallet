@@ -12,95 +12,69 @@
         android:layout_marginTop="42dp"
         android:src="@drawable/card" />
 
-    <Button
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/add_photo_image"
-        android:layout_centerVertical="true"
-        android:background="@drawable/email" />
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/add_photo_image"
         android:layout_alignRight="@+id/add_photo_image"
         android:layout_alignTop="@+id/add_photo_image"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/makecard_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="TextView" />
+            android:text="TextView" 
+            android:typeface="sans"
+            />
 
         <TextView
             android:id="@+id/textCompany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            android:layout_marginLeft="10dp"
-           android:text="TextView" />
+           android:text="TextView" 
+         android:typeface="sans"
+           />
 
         <TextView
             android:id="@+id/textNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
  android:layout_marginLeft="10dp"
-            android:text="TextView" />
+            android:text="TextView" 
+           android:typeface="sans"
+            />
 
         <TextView
             android:id="@+id/textEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="TextView" />
+            android:text="TextView" 
+           android:typeface="sans"
+            />
 
         <TextView
             android:id="@+id/textAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
              android:layout_marginLeft="10dp"
-            android:text="TextView" />
+            android:text="TextView" 
+            android:typeface="sans"
+            />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="TextView" />
+            android:text="TextView"
+            android:typeface="sans"
+             />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/call"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/email"
-        android:layout_alignBottom="@+id/email"
-        android:layout_marginLeft="19dp"
-        android:layout_toRightOf="@+id/email"
-       android:background="@drawable/phone" />
-
-    <Button
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/call"
-        android:layout_alignBottom="@+id/call"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/call"
-      
-        android:background="@drawable/sms" />
-
-    <Button
-        android:id="@+id/mapView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/email"
-        android:layout_below="@+id/email"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/locate" />
 
     <Button
         android:id="@+id/social"
@@ -123,10 +97,46 @@
     <Button
         android:id="@+id/showImage_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/mapView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp"
+       
+        android:background="@drawable/clipping_picture"
         />
+
+    <Button
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/call"
+        android:layout_alignBottom="@+id/call"
+        android:layout_alignRight="@+id/add_photo_image"
+        android:background="@drawable/sms" />
+
+    <Button
+        android:id="@+id/call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mapView"
+        android:layout_alignLeft="@+id/social"
+        android:background="@drawable/phone" />
+
+    <Button
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/add_photo_image"
+        android:layout_centerVertical="true"
+        android:background="@drawable/email" />
+
+    <Button
+        android:id="@+id/mapView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/email"
+        android:layout_below="@+id/email"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/locate" />
 
 </RelativeLayout>
