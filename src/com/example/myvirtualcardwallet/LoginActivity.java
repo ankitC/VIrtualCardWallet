@@ -247,19 +247,12 @@ public class LoginActivity extends Activity {
 			req.put("password", mPassword);
 
 			try {
-<<<<<<< HEAD
-				ip = new String("128.237.218.190");	 
-				port = 1234;
-				Log.d("ClientActivity", "C: Connecting...");
-				client = new Socket(ip, port);
-				server = null;	
-=======
+
 				 ip = new String("128.237.164.252");	 
 				 port = 9876;
 				 Log.d("ClientActivity", "C: Connecting...");
 				 client = new Socket(ip, port);
 				 server = null;	
->>>>>>> 9feb7ca89cb36f0247784e6250af217969839034
 			} catch (UnknownHostException e) {
 
 				e.printStackTrace();
