@@ -247,7 +247,7 @@ public class LoginActivity extends Activity {
 			req.put("password", mPassword);
 		
 			try {
-				 ip = new String("128.237.164.252");	 
+				 ip = new String("128.237.220.142");	 
 				 port = 9876;
 				 Log.d("ClientActivity", "C: Connecting...");
 				 client = new Socket(ip, port);
