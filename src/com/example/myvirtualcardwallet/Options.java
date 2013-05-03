@@ -86,7 +86,7 @@ ImageButton editCardImage= (ImageButton) findViewById(R.id.edit_card_image);
 		
 		@Override
 		public void onClick(View v) {
-			Intent addCardIntent=new Intent(getApplicationContext(), AddCard.class);
+			Intent addCardIntent=new Intent(getApplicationContext(), AddCardOptionsActivity.class);
 			addCardIntent.putExtras(bunName);
 			startActivity(addCardIntent);
 		}
