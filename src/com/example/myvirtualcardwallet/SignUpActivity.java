@@ -60,7 +60,7 @@ public class SignUpActivity extends Activity {
 	private View mLoginFormView;
 	private View mLoginStatusView;
 	private TextView mLoginStatusMessageView;
-	
+
 	//Network Information
 	protected int port;
 	protected String ip;
@@ -89,18 +89,18 @@ public class SignUpActivity extends Activity {
 		mConfirmPasswordView = (EditText) findViewById(R.id.password2);
 		mNameView = (EditText) findViewById(R.id.name);
 		mUsernameView = (EditText) findViewById(R.id.username);
-		
+
 		mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-					@Override
-					public boolean onEditorAction(TextView textView, int id,
-							KeyEvent keyEvent) {
-						if (id == R.id.sign_up_button || id == EditorInfo.IME_NULL) {
-							attemptLogin();
-							return true;
-						}
-						return false;
-					}
-				});
+			@Override
+			public boolean onEditorAction(TextView textView, int id,
+					KeyEvent keyEvent) {
+				if (id == R.id.sign_up_button || id == EditorInfo.IME_NULL) {
+					attemptLogin();
+					return true;
+				}
+				return false;
+			}
+		});
 
 		mLoginFormView = findViewById(R.id.login_form1);
 		mLoginStatusView = findViewById(R.id.login_status1);
@@ -114,7 +114,7 @@ public class SignUpActivity extends Activity {
 					}
 				});
 	}
-	
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -172,14 +172,14 @@ public class SignUpActivity extends Activity {
 			focusView = mEmailView;
 			cancel = true;
 		}
-		
+
 		//Check Name
 		if (TextUtils.isEmpty(mName)) {
 			mNameView.setError(getString(R.string.error_field_required));
 			focusView = mNameView;
 			cancel = true;
 		}
-		
+
 		//Check Username
 		if (TextUtils.isEmpty(mUsername)) {
 			mUsernameView.setError(getString(R.string.error_field_required));
@@ -197,17 +197,17 @@ public class SignUpActivity extends Activity {
 			showProgress(true);
 			mAuthTask = new UserLoginTask();
 			mAuthTask.execute((Void) null);
-									
-//						for (String credential : DUMMY_CREDENTIALS) {
-//							String[] pieces = credential.split(":");
-//							if (pieces[0].equals(mEmail)) {
-//								// Account exists, return true if the password matches.
-//								return pieces[1].equals(mPassword);
-//							}
-//						}
 
-						// TODO: register the new account here.
-						
+			//						for (String credential : DUMMY_CREDENTIALS) {
+			//							String[] pieces = credential.split(":");
+			//							if (pieces[0].equals(mEmail)) {
+			//								// Account exists, return true if the password matches.
+			//								return pieces[1].equals(mPassword);
+			//							}
+			//						}
+
+			// TODO: register the new account here.
+
 		}
 	}
 
@@ -225,25 +225,25 @@ public class SignUpActivity extends Activity {
 
 			mLoginStatusView.setVisibility(View.VISIBLE);
 			mLoginStatusView.animate().setDuration(shortAnimTime)
-					.alpha(show ? 1 : 0)
-					.setListener(new AnimatorListenerAdapter() {
-						@Override
-						public void onAnimationEnd(Animator animation) {
-							mLoginStatusView.setVisibility(show ? View.VISIBLE
-									: View.GONE);
-						}
-					});
+			.alpha(show ? 1 : 0)
+			.setListener(new AnimatorListenerAdapter() {
+				@Override
+				public void onAnimationEnd(Animator animation) {
+					mLoginStatusView.setVisibility(show ? View.VISIBLE
+							: View.GONE);
+				}
+			});
 
 			mLoginFormView.setVisibility(View.VISIBLE);
 			mLoginFormView.animate().setDuration(shortAnimTime)
-					.alpha(show ? 0 : 1)
-					.setListener(new AnimatorListenerAdapter() {
-						@Override
-						public void onAnimationEnd(Animator animation) {
-							mLoginFormView.setVisibility(show ? View.GONE
-									: View.VISIBLE);
-						}
-					});
+			.alpha(show ? 0 : 1)
+			.setListener(new AnimatorListenerAdapter() {
+				@Override
+				public void onAnimationEnd(Animator animation) {
+					mLoginFormView.setVisibility(show ? View.GONE
+							: View.VISIBLE);
+				}
+			});
 		} else {
 			// The ViewPropertyAnimator APIs are not available, so simply show
 			// and hide the relevant UI components.
@@ -261,11 +261,11 @@ public class SignUpActivity extends Activity {
 		@SuppressWarnings("unchecked")
 		@Override
 		protected Boolean doInBackground(Void... params) {
-			
+
 			//Create Request message
 			req = new JSONObject();
 			req.put("request", "signup");
-			
+
 			//Create message to be sent username and pass
 			//elements = new JSONObject();
 
@@ -273,13 +273,13 @@ public class SignUpActivity extends Activity {
 			req.put("email", mEmail);
 			req.put("username", mUsername);
 			req.put("password", mPassword);
-		
+
 			try {
-				 ip = new String("128.237.164.252");	 
-				 port = 9876;
-				 Log.d("ClientActivity", "C: Connecting...");
-				 client = new Socket(ip, port);
-				 server = null;	
+				ip = new String("128.237.220.142");	 
+				port = 9876;
+				Log.d("ClientActivity", "C: Connecting...");
+				client = new Socket(ip, port);
+				server = null;	
 			} catch (UnknownHostException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -288,41 +288,41 @@ public class SignUpActivity extends Activity {
 				e.printStackTrace();
 			}
 			//>>>>>>>>>End Setup>>>>>>>>>>>>>>>>>>
-			 
-			 //Setup the Input and Output Stream
-			 try {
+
+			//Setup the Input and Output Stream
+			try {
 				out = new PrintWriter(client.getOutputStream());
 				in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			 /**
-			  *  Communicate with the server
-			  *  Send the initial username and password
-			  */
-			 out.write(req.toString());
-			 out.flush();
-//			 out.write(elements.toString());
-//			 out.flush();
+			/**
+			 *  Communicate with the server
+			 *  Send the initial username and password
+			 */
+			out.write(req.toString());
+			out.flush();
+			//			 out.write(elements.toString());
+			//			 out.flush();
 			/**
 			 * 	 Wait for server to respond
 			 */
-			 JSONParser parser = new JSONParser();
-				JSONObject tmp = new JSONObject();
-				do{
-					try {
-						reply = new String(in.readLine());
-						tmp = (JSONObject) parser.parse(reply);
-						reply = (String) tmp.get("response");
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (ParseException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}while((!reply.equals("Yes")) && (!reply.equals("Exists")));
+			JSONParser parser = new JSONParser();
+			JSONObject tmp = new JSONObject();
+			do{
+				try {
+					reply = new String(in.readLine());
+					tmp = (JSONObject) parser.parse(reply);
+					reply = (String) tmp.get("response");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}while((!reply.equals("Yes")) && (!reply.equals("Exists")));
 			if(reply.equals("Yes")){
 				//Success Go to app
 				loginverified = true;
@@ -344,29 +344,29 @@ public class SignUpActivity extends Activity {
 				//Toast.makeText(getApplicationContext(), "Success",Toast.LENGTH_LONG).show();
 				//Go to the App activity
 				Intent home = new Intent(getApplicationContext(), MakeCard.class);
-		        home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		        Bundle b= new Bundle();
-		        b.putString("Username",mUsername);
-		        b.putString("Name", mName);
-		        b.putString("Email", mEmail);
-		        
-		        home.putExtras(b);
-		        startActivity(home);
-		        
-		      //   Close Login Screen
-		     //   Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-		       // startActivity(intent);
+				home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				Bundle b= new Bundle();
+				b.putString("Username",mUsername);
+				b.putString("Name", mName);
+				b.putString("Email", mEmail);
+
+				home.putExtras(b);
+				startActivity(home);
+
+				//   Close Login Screen
+				//   Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+				// startActivity(intent);
 			} else {
-				
+
 				//Go to the App activity
 				Intent home = new Intent(getApplicationContext(), SignUpActivity.class);
-		        home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		        
-		        
-		        startActivity(home);
-//				mPasswordView
-//						.setError(getString(R.string.error_incorrect_password));
-//				mPasswordView.requestFocus();
+				home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+
+				startActivity(home);
+				//				mPasswordView
+				//						.setError(getString(R.string.error_incorrect_password));
+				//				mPasswordView.requestFocus();
 			}
 		}
 

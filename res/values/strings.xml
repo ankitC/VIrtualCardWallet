@@ -42,11 +42,11 @@
     <string name="submit_button">Submit</string>
     <string name="prompt_pass">Password</string>
     <string name="title_show_image">Your image</string>
-    <string name="title_activity_add_card_options">AddCardOptionsActivity</string>
+    <string name="title_activity_add_card_options">Add a card via..</string>
     <string name="bluetooth">Bluetooth</string>
     <string name="web">Web</string>
     <string name="title_activity_add_via_bluetooth">AddViaBluetooth</string>
-    <string name="share">Share</string>
-    <string name="start_listening">Listen for cards</string>
+    <string name="share">Share my card</string>
+    <string name="start_listening">Recieve a Card</string>
 
 </resources>

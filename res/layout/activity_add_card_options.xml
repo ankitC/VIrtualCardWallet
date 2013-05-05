@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".AddCardOptionsActivity" >
+    tools:context=".AddCardOptionsActivity" 
+    android:background="@color/white">
 
     <Button
         android:id="@+id/addBluetooth"
@@ -14,8 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="116dp"
-        android:text="@string/bluetooth" />
+        android:layout_marginTop="116dp" 
+        android:background="@drawable/bluetooth"/>
 
     <Button
         android:id="@+id/addWeb"
@@ -24,6 +25,7 @@
         android:layout_below="@+id/addBluetooth"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="88dp"
-        android:text="@string/web" />
+        
+        android:background="@drawable/wifi" />
 
 </RelativeLayout>
